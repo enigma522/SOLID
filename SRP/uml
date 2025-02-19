@@ -1,0 +1,23 @@
+@startuml
+class CarManager {
+
+ +getFromDb()
+ +getCarsNames()
+ +getBestCar()
+}
+
+class Car {
+ -_id
+ -_model
+ -_brand
+ +getId()
+ +getModel()
+ +getBrand()
+}
+
+Car --* CarManager
+
+@enduml
+
+
+

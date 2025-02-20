@@ -1,0 +1,41 @@
+@startuml
+
+interface Door {
+    +void lock()
+    +void unlock()
+    +void open()
+    +void close()
+    +void timeOutCallback()
+    +void proximityCallback()
+}
+
+class TimedDoor implements Door {
+    -boolean _locked
+    -boolean _opened
+    -{static} final int TIMEOUT = 100
+}
+
+class SensingDoor implements Door {
+    -boolean _locked
+    -boolean _opened
+}
+
+class Timer {
+    +void register(int timeout, Door door)
+}
+
+class Sensor {
+    +void register(Door door)
+}
+
+
+Door <.. Sensor
+Door <.. Timer
+
+TimedDoor ..> Timer
+SensingDoor ..> Sensor
+
+
+
+
+@enduml

@@ -17,6 +17,7 @@ public class ElectronicDuck extends Duck
     @Override
     public void swim()
     {
+        
         if (_on) {
             System.out.println("Electronic duck swim");
         } else {
